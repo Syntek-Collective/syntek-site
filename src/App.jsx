@@ -1,10 +1,15 @@
-function App() {
+//import { Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+
+
+export default function App() {
   return (
-    <main>
-      <h1>Syntek Collective</h1>
-      <p>Open source software, built in the open.</p>
-    </main>
+    <>
+      <Nav />
+
+      <main>
+      </main>
+    </>
+    
   );
 }
-
-export default App;
