@@ -5,6 +5,7 @@ export const products = [
         repo: 'https://github.com/Syntek-Collective/PennyWyze',
         doc: '',
         logo: '/products/pennywyze.png',
+        website: ''
     },
     {
         name: 'Lemonbeam',
@@ -12,5 +13,6 @@ export const products = [
         repo: 'https://github.com/Syntek-Collective/Lemonbeam',
         doc: '',
         logo: '',
+        website: ''
     }
 ]
