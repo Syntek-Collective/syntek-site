@@ -125,22 +125,24 @@ nav { display: flex; align-items: center; justify-content: space-between; gap: 3
 .flip-card { color: var(--ink); min-width: 0; height: 445px; position: relative; }
 .flip-inner { position: relative; width: 100%; height: 100%; }
 .card-face { position: absolute; inset: 0; border: 1px solid var(--rule); border-radius: 0; background: var(--panel); transition: background .2s, opacity .15s, border-color .2s; }
-.flip-card:nth-child(even) { margin-top: 35px; --panel: var(--blue); --panel-hover: #203a8a; --ink: #f1efe6; --muted: #c3cbe4; --rule: #f1efe63d; --accent: #f1efe6; --bg: var(--blue); }
-.flip-card:nth-child(odd) { --panel: #171915; --panel-hover: #22251e; --ink: #eeeae0; --muted: #bebfb3; --rule: #eeeee140; --accent: #eeeae0; }
+.flip-card:nth-child(even) { margin-top: 35px; }
+/* Two columns: blue cards form a checkerboard (2nd, 3rd, 6th, 7th...). */
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) { --panel: var(--accent-deep); --panel-hover: #16296b; --muted: #c3cbe4; --rule: #f1efe63d; }
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) .card-logo { mix-blend-mode: normal; }
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) .card-logo > img { filter: none; }
+.flip-card { --panel: #171915; --panel-hover: #22251e; --ink: #eeeae0; --muted: #bebfb3; --rule: #eeeee140; --accent: #eeeae0; }
 .card-front:hover { border-color: var(--accent); }
 .project-arrow { display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid var(--rule); border-radius: 50%; transition: transform .2s, background .2s, color .2s; }
 .card-front-button:hover .project-arrow, .card-front-button:focus-visible .project-arrow { transform: rotate(45deg); background: var(--ink); color: var(--panel); }
 .card-summary { display: block; font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 52ch; margin-top: 15px; }
 .card-logo { isolation: isolate; }
 .card-logo > img { transition: transform 350ms ease; }
-.flip-card:nth-child(odd) .card-logo { mix-blend-mode: screen; }
-.flip-card:nth-child(odd) .card-logo > img { filter: contrast(1.18); }
+.flip-card .card-logo { mix-blend-mode: screen; }
+.flip-card .card-logo > img { filter: contrast(1.18); }
 .card-front-button:hover .card-logo > img { transform: scale(1.035); }
-.flip-card:nth-child(even) .card-logo::before { content: ''; position: absolute; right: -14px; top: 16px; width: 142px; height: 142px; background: radial-gradient(circle at 24% 24%,#f1efe614 0 23%,transparent 23.7%),radial-gradient(circle at 76% 24%,#f1efe614 0 23%,transparent 23.7%),radial-gradient(circle at 24% 76%,#f1efe614 0 23%,transparent 23.7%),radial-gradient(circle at 76% 76%,#f1efe614 0 23%,transparent 23.7%); transform: rotate(-14deg); z-index: -1; transition: transform .4s; }
-.flip-card:nth-child(even) .card-front-button:hover .card-logo::before { transform: rotate(-4deg); }
 .flip-card:nth-child(even) .fallback-wordmark { font-family: var(--serif); font-style: italic; font-size: clamp(45px, 5vw, 72px); letter-spacing: -.03em; }
 .card-front:focus-within { outline: 2px solid var(--accent); outline-offset: 4px; }
-.flip-card:nth-child(odd) :focus-visible { outline-color: #eeeae0; }
+.flip-card :focus-visible { outline-color: #eeeae0; }
 .card-front-button { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 26px; text-align: left; border-radius: inherit; }
 .project-meta { display: flex; justify-content: space-between; gap: 15px; width: 100%; color: var(--muted); font-size: 10px; }
 .card-logo { flex: 1; width: 100%; min-height: 0; display: grid; place-items: center; position: relative; overflow: hidden; }
@@ -155,7 +157,7 @@ nav { display: flex; align-items: center; justify-content: space-between; gap: 3
 .card-back-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .card-back-top > .meta { color: var(--muted); font-size: 10px; }
 .flip-back { min-height: 44px; padding: 9px 13px; border: 1px solid var(--rule); border-radius: 0; }
-.flip-back:hover { background: var(--accent); color: var(--bg); }
+.flip-back:hover { background: var(--accent); color: var(--panel); }
 .card-back h2 { font-size: 36px; }
 .card-description { flex: 1; overflow: auto; min-height: 0; padding-right: 8px; font-size: 15px; color: var(--muted); scrollbar-color: #929587 var(--panel); }
 .project-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 22px; }
@@ -225,6 +227,13 @@ footer { border-top: 1px solid var(--rule); padding-block: 48px 24px; }
   .section { padding-block: 42px; }
   .flip-card { height: 440px; }
   .flip-card:nth-child(even) { margin-top: 0; }
+  /* One column: every other card is blue, so the 3rd goes back to black and the 4th turns blue. */
+  .flip-card:nth-child(4n+3) { --panel: #171915; --panel-hover: #22251e; --muted: #bebfb3; --rule: #eeeee140; }
+  .flip-card:nth-child(4n+3) .card-logo { mix-blend-mode: screen; }
+  .flip-card:nth-child(4n+3) .card-logo > img { filter: contrast(1.18); }
+  .flip-card:nth-child(4n) { --panel: var(--accent-deep); --panel-hover: #16296b; --muted: #c3cbe4; --rule: #f1efe63d; }
+  .flip-card:nth-child(4n) .card-logo { mix-blend-mode: normal; }
+  .flip-card:nth-child(4n) .card-logo > img { filter: none; }
   .card-back, .card-front-button { padding: 22px; }
   .card-description { font-size: 14px; }
   .card-title { font-size: 27px; }

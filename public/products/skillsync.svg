@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- SkillSync mark, recolored for dark cards: the original dark green is swapped for pale green -->
+  <path d="M 230 705 A 398 398 0 0 1 900 330" stroke="#6FA85B" stroke-width="34"/>
+  <polygon points="955,288 985,415 860,372" fill="#6FA85B" stroke="#6FA85B" stroke-width="16"/>
+  <path d="M 1020 512 A 398 398 0 0 1 335 885" stroke="#DCEBCF" stroke-width="34"/>
+  <polygon points="264,812 376,853 284,942" fill="#DCEBCF" stroke="#DCEBCF" stroke-width="16"/>
+  <path d="M 487 362 H 703 L 835 494 V 838 A 37 37 0 0 1 798 875 H 487 A 37 37 0 0 1 450 838 V 399 A 37 37 0 0 1 487 362 Z" stroke="#DCEBCF" stroke-width="34"/>
+  <path d="M 703 362 V 470 A 30 30 0 0 0 733 500 H 835" stroke="#DCEBCF" stroke-width="34"/>
+  <g stroke="#6FA85B" stroke-width="32">
+    <path d="M 538 590 H 738"/>
+    <path d="M 538 675 H 738"/>
+    <path d="M 538 767 H 648"/>
+  </g>
+  <circle cx="710" cy="767" r="16" fill="#6FA85B"/>
+</svg>
