@@ -15,7 +15,7 @@ export default function ProcessStudy() {
     art.current?.style.removeProperty('--study-y')
   }
   return <figure className="hero-study" onPointerMove={followPointer} onPointerLeave={resetPointer}>
-    <div className="study-art" ref={art}><img src="/images/process-study-hires.png" alt="Pencil process study connecting Identify, Synthesize, Build, Deploy, and Iterate." width="1254" height="1254"/></div>
+    <div className="study-art" ref={art}><img src="/images/process-study-hires.png" alt="Pencil process study connecting Identify, Synthesize, Build, Deploy, and Iterate." width="720" height="720"/></div>
     <figcaption><span className="meta">Our process</span><span>Ideas into useful things.</span></figcaption>
   </figure>
 }
