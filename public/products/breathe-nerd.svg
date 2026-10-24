@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="880" viewBox="190 240 880 880" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Breathe, Nerd app icon without its dark rounded square, since the card is already dark -->
+  <circle cx="625" cy="578" r="278" fill="#E3D38A"/>
+  <path d="M 268 690 A 374 374 0 0 0 982 690" stroke="#FBF8EC" stroke-width="34"/>
+  <polyline points="886,920 935,962 886,1003" stroke="#FBF8EC" stroke-width="30"/>
+  <path d="M 985 920 V 1003" stroke="#FBF8EC" stroke-width="30"/>
+</svg>
