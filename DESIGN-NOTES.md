@@ -2,7 +2,7 @@
 
 The original SYNTEK moodboards define the identity: off-white paper, black ink, a single ultramarine accent, its existing wordmark, pencil process artwork, and restrained editorial type. Astral informs navigation clarity, spacing, and access to actual software; its purple/lime identity and oversized centered hero are not used.
 
-The homepage uses a higher-resolution restoration of the supplied process-study.jpeg and the existing SYNTEK logo. The original is retained. The artwork displays at a maximum of 340 CSS pixels, without cropping or enlargement transforms. Generated workshop imagery and staged tape effects are no longer rendered. The previous assets remain on disk. The pencil study was restored using the built-in ImageGen tool after the user reported that the small original looked blurry. The output is public/images/process-study-hires.png.
+The homepage uses a higher-resolution restoration of the supplied process-study.jpeg and the existing SYNTEK logo. The artwork displays at a maximum of 340 CSS pixels, without cropping or enlargement transforms. Generated workshop imagery and staged tape effects are no longer rendered, and their unused assets (including the original process-study.jpeg) were removed from the repo; they remain in Git history. The pencil study was restored using the built-in ImageGen tool after the user reported that the small original looked blurry. The output is public/images/process-study-hires.png.
 
 Project descriptions, links, team records, documentation, and keyboard disclosure behavior are retained. The homepage provides access to the existing software panels.
 

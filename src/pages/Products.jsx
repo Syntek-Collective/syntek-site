@@ -1,4 +1,70 @@
-import {products} from '../data/products.js'
+import { products } from '../data/products.js'
 import ProductCard from '../components/ProductCard.jsx'
-import {Label} from '../components/StudioElements.jsx'
-export default function Products(){return <><section className="container page-intro"><Label number="01">Software</Label><h1>What we’re<br/><em>building.</em></h1><p>Open-source projects from SYNTEK. Take a look under the hood; that’s why it’s open.</p></section><section className="paper section"><div className="container product-grid">{products.length?products.map((p,i)=><ProductCard key={p.name} {...p} index={i}/>):<p>New projects will appear here. <a href="https://github.com/Syntek-Collective">Explore GitHub ↗</a></p>}</div></section><section id="documentation" className="container documentation section"><Label number="02">Documentation</Label><h2>Project documentation</h2>{products.some(p=>p.doc)?<ul>{products.filter(p=>p.doc).map(p=><li key={p.name}><a className="text-link" href={p.doc}>{p.name} ↗</a></li>)}</ul>:<><p>Visit each repository for available README files and project guidance.</p><div className="project-links">{products.filter(p=>p.repo).map(p=><a className="text-link" href={p.repo} key={p.name}>{p.name} ↗</a>)}</div></>}</section></>}
+import { Label } from '../components/StudioElements.jsx'
+export default function Products() {
+  return (
+    <>
+      <section className="container page-intro">
+        <Label number="01">Software</Label>
+        <h1>
+          What we’re
+          <br />
+          <em>building.</em>
+        </h1>
+        <p>
+          Open-source projects from SYNTEK. Take a look under the hood; that’s
+          why it’s open.
+        </p>
+      </section>
+      <section className="paper section">
+        <div className="container product-grid">
+          {products.length ? (
+            products.map((p, i) => (
+              <ProductCard key={p.name} {...p} index={i} />
+            ))
+          ) : (
+            <p>
+              New projects will appear here.{' '}
+              <a href="https://github.com/Syntek-Collective">
+                Explore GitHub ↗
+              </a>
+            </p>
+          )}
+        </div>
+      </section>
+      <section id="documentation" className="container documentation section">
+        <Label number="02">Documentation</Label>
+        <h2>Project documentation</h2>
+        {products.some((p) => p.doc) ? (
+          <ul>
+            {products
+              .filter((p) => p.doc)
+              .map((p) => (
+                <li key={p.name}>
+                  <a className="text-link" href={p.doc}>
+                    {p.name} ↗
+                  </a>
+                </li>
+              ))}
+          </ul>
+        ) : (
+          <>
+            <p>
+              Visit each repository for available README files and project
+              guidance.
+            </p>
+            <div className="project-links">
+              {products
+                .filter((p) => p.repo)
+                .map((p) => (
+                  <a className="text-link" href={p.repo} key={p.name}>
+                    {p.name} ↗
+                  </a>
+                ))}
+            </div>
+          </>
+        )}
+      </section>
+    </>
+  )
+}
