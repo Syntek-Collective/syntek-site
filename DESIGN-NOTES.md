@@ -1,6 +1,6 @@
 # SYNTEK visual direction
 
-The original SYNTEK moodboards define the identity: off-white paper, black ink, rust details, its existing wordmark, pencil process artwork, and restrained editorial type. Astral informs navigation clarity, spacing, and access to actual software; its purple/lime identity and oversized centered hero are not used.
+The original SYNTEK moodboards define the identity: off-white paper, black ink, a single ultramarine accent, its existing wordmark, pencil process artwork, and restrained editorial type. Astral informs navigation clarity, spacing, and access to actual software; its purple/lime identity and oversized centered hero are not used.
 
 The homepage uses a higher-resolution restoration of the supplied process-study.jpeg and the existing SYNTEK logo. The original is retained. The artwork displays at a maximum of 340 CSS pixels, without cropping or enlargement transforms. Generated workshop imagery and staged tape effects are no longer rendered. The previous assets remain on disk. The pencil study was restored using the built-in ImageGen tool after the user reported that the small original looked blurry. The output is public/images/process-study-hires.png.
 
@@ -21,3 +21,22 @@ The study now blends into the paper rather than appearing as a rectangular image
 A restrained pointer response moves the study by at most four pixels per axis, on mouse input only. Reduced-motion users get a static drawing. Project hover feedback is also suppressed by the reduced-motion stylesheet.
 
 Verified at 1440px, 390px, and 320px widths: no horizontal overflow; front-panel summaries fit; project disclosure and Escape/focus return preserved.
+
+## Accent, icon, and motion
+
+The brand board (LinkedIn profile options: 01 Primary through 09 Tokyo) is monochrome. Red was removed from the site. A single ultramarine, `--accent` / `--blue` (#26429a), is the only accent color: primary button, the OSP stamp, nav hover and active state, link hovers, eyebrow labels, focus rings, and selection. Blue echoes the color fringe in the 07 / Glitch tile. The Lemonbeam project panel is a solid ultramarine field beside the black PennyWyze panel. The only red left is inside the PennyWyze product logo.
+
+The four-circle mark beside "Start with the problem" is the 03 / Icon from the board: four solid ink circles, square and upright. Do not recolor or rotate it.
+
+Motion is limited to two moments, both disabled under `prefers-reduced-motion`:
+
+- The SYNTEK wordmark glitches once (under a second) shortly after load and again on hover: horizontal jitter, slices, and a blue fringe.
+- The four-circle icon builds in, one circle at a time, the first time it scrolls into view (`src/components/MissionMark.jsx`).
+
+Avoid generic fade-up-on-scroll effects for sections.
+
+## Copy
+
+Copy is short and declarative, drawing on the board's phrases: "Ideas into useful things." (process study caption), "People, problems, systems, solutions." (homepage), and "より良い仕組みをつくる", loosely "Better systems, one tool at a time." (Collective page). Product pitches belong on the product cards, not in brand copy. Engineers are described as spread across the world; do not name specific cities.
+
+Open item: the Collective page's "Our focus" paragraph is still the earlier wording and may need a rewrite to match.
