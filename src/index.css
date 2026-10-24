@@ -125,9 +125,11 @@ nav { display: flex; align-items: center; justify-content: space-between; gap: 3
 .flip-card { color: var(--ink); min-width: 0; height: 445px; position: relative; }
 .flip-inner { position: relative; width: 100%; height: 100%; }
 .card-face { position: absolute; inset: 0; border: 1px solid var(--rule); border-radius: 0; background: var(--panel); transition: background .2s, opacity .15s, border-color .2s; }
-.flip-card:nth-child(even) { margin-top: 35px; --panel: var(--accent-deep); --panel-hover: #16296b; --muted: #c3cbe4; --rule: #f1efe63d; }
-.flip-card:nth-child(even) .card-logo { mix-blend-mode: normal; }
-.flip-card:nth-child(even) .card-logo > img { filter: none; }
+.flip-card:nth-child(even) { margin-top: 35px; }
+/* Two columns: blue cards form a checkerboard (2nd, 3rd, 6th, 7th...). */
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) { --panel: var(--accent-deep); --panel-hover: #16296b; --muted: #c3cbe4; --rule: #f1efe63d; }
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) .card-logo { mix-blend-mode: normal; }
+.flip-card:is(:nth-child(4n+2), :nth-child(4n+3)) .card-logo > img { filter: none; }
 .flip-card { --panel: #171915; --panel-hover: #22251e; --ink: #eeeae0; --muted: #bebfb3; --rule: #eeeee140; --accent: #eeeae0; }
 .card-front:hover { border-color: var(--accent); }
 .project-arrow { display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid var(--rule); border-radius: 50%; transition: transform .2s, background .2s, color .2s; }
@@ -225,6 +227,13 @@ footer { border-top: 1px solid var(--rule); padding-block: 48px 24px; }
   .section { padding-block: 42px; }
   .flip-card { height: 440px; }
   .flip-card:nth-child(even) { margin-top: 0; }
+  /* One column: every other card is blue, so the 3rd goes back to black and the 4th turns blue. */
+  .flip-card:nth-child(4n+3) { --panel: #171915; --panel-hover: #22251e; --muted: #bebfb3; --rule: #eeeee140; }
+  .flip-card:nth-child(4n+3) .card-logo { mix-blend-mode: screen; }
+  .flip-card:nth-child(4n+3) .card-logo > img { filter: contrast(1.18); }
+  .flip-card:nth-child(4n) { --panel: var(--accent-deep); --panel-hover: #16296b; --muted: #c3cbe4; --rule: #f1efe63d; }
+  .flip-card:nth-child(4n) .card-logo { mix-blend-mode: normal; }
+  .flip-card:nth-child(4n) .card-logo > img { filter: none; }
   .card-back, .card-front-button { padding: 22px; }
   .card-description { font-size: 14px; }
   .card-title { font-size: 27px; }
