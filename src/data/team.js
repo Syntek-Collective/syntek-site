@@ -23,12 +23,5 @@ export const team = [
         position: 'Software Engineer',
         linkedin: 'linkedin.com/in/john-delong',
         headshot: ''
-    },
-    {
-        name: 'Maia Bard',
-        position: 'Software Engineer',
-        linkedin: 'linkedin.com/in/maiakbard',
-        headshot: ''
     }
-    
 ]
